@@ -1,0 +1,153 @@
+body {
+  /* 그라데이션 넣기 */
+  background-color: rgb(216, 201, 175);
+  background-size: cover;
+  background-position: center top;
+  background-attachment: fixed;
+}
+
+.gugi-regular {
+  font-family: "Gugi", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  font-family: "Gugi", sans-serif;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Gugi", sans-serif;
+}
+
+/* 네비게이션 바 */
+.navbar {
+  border-bottom: 1px solid #000000; /* 원하는 색상과 두께로 변경 */
+}
+.navbar-nav .nav-item:last-child {
+  margin-right: 0;
+}
+.navbar-toggler {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+.navbar-toggler:focus,
+.navbar-toggler:active {
+  outline: none;
+  border: 1px solid rgb(0, 0, 0);
+  box-shadow: none;
+}
+.now {
+  color: rgb(159, 56, 56) !important;
+}
+.nav-link:hover,
+.nav-link:active {
+  color: rgb(159, 56, 56) !important;
+}
+
+/* 메인 상단 */
+.btn-success {
+  width: 20%;
+  flex: 1;
+  min-width: 0;
+  background-color: transparent;
+  border: none;
+}
+.btn_width {
+  width: 100%;
+}
+.bg-ibory {
+  background-color: rgb(240, 235, 221);
+}
+.bg-ibory-text {
+  color: rgb(159, 56, 56);
+}
+.bg-ibory-text:hover,
+.bg-ibory-text:active {
+  background-color: rgb(159, 56, 56) !important;
+  color: rgb(240, 235, 221) !important;
+}
+
+/* 클릭된 버튼 스타일 */
+.bg-ibory-text.active {
+  background-color: rgb(159, 56, 56) !important;
+  color: rgb(240, 235, 221) !important;
+}
+
+@media (min-width: 774px) {
+  .btn_width {
+    width: 75%;
+  }
+}
+@media (min-width: 1000px) {
+  .btn_width {
+    width: 50%;
+  }
+}
+
+/* 메인하단 */
+.img_hover {
+  cursor: pointer;
+}
+.img_hover:hover {
+  filter: brightness(60%);
+}
+
+.text_copyright {
+  color: rgb(177, 166, 143);
+}
+
+.play-button {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+.play-button img {
+  width: 100%;
+  height: auto;
+  transition: opacity 0.3s;
+}
+.play-button .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.play-button:hover img {
+  opacity: 0.3;
+}
+.play-button:hover .overlay {
+  opacity: 1;
+}
+.play-button p {
+  margin-top: 10px;
+}
+.source-text {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.btn-red {
+  color: rgb(159, 56, 56) !important;
+  background-color: rgb(240, 235, 221) !important;
+  border: none;
+}
+.text-red {
+  color: rgb(159, 56, 56) !important;
+}
+.btn-ibory {
+  background-color: rgb(240, 235, 221) !important;
+}

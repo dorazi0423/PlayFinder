@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>연극추천</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="recommend.css" />
+    <!-- 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gugi&family=Inconsolata:wght@200..900&family=Krub:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600&family=Quicksand:wght@300..700&family=Rajdhani:wght@300;400;500;600;700&family=Shadows+Into+Light&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body data-bs-spy="scroll">
+    <!-- 네비게이션바 -->
+    <!-- 네비게이션바 -->
+    <nav class="navbar navbar-expand-md bg-body-tertiary fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand text-red" href="index.html">오늘 연극 뭐 볼까</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="festival.html">연극제</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="playTheater.html">극장</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="theater.html">극단</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="play.html">장르별</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active now"
+                aria-current="page"
+                href="recommend.html"
+                >연극추천</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- 메인 컨텐츠 -->
+    <main
+      class="text-white d-flex flex-column justify-content-center align-items-center overflow-css py-5 mt-5 mb-5"
+      id="questionnaire"
+    >
+      <div
+        class="d-flex flex-column justify-content-center align-items-center py-5 mt-5"
+      >
+        <h2 class="fw-bold mb-5 text-red">누구랑 보러가나요?</h2>
+        <button
+          type="button"
+          class="btn btn-warning btn-ibory text-red rounded-pill mb-4 btn-option"
+          data-target="Q2"
+          data-result="1"
+        >
+          가족
+        </button>
+        <button
+          type="button"
+          class="btn btn-warning btn-ibory text-red rounded-pill mb-4 btn-option"
+          data-target="Q2"
+          data-result="2"
+        >
+          친구
+        </button>
+        <button
+          type="button"
+          class="btn btn-warning btn-ibory text-red rounded-pill mb-4 btn-option"
+          data-target="Q2"
+          data-result="3"
+        >
+          연인
+        </button>
+        <button
+          type="button"
+          class="btn btn-warning btn-ibory text-red rounded-pill mb-4 btn-option"
+          data-target="Q2"
+          data-result="4"
+        >
+          혼자
+        </button>
+      </div>
+    </main>
+
+    <main
+      class="d-flex flex-column justify-content-center align-items-center overflow-css py-5 mt-5 mb-5 d-none"
+      id="Q2"
+    >
+      <div
+        class="d-flex flex-column justify-content-center align-items-center py-5 mt-5"
+      >
+        <h2 class="fw-bold mb-5">보고 싶은 장르는?</h2>
+        <button
+          type="button"
+          class="btn btn-warning btn-ibory rounded-pill mb-4 p-2 btn-option"
+          data-target="result"
+          data-result="1"
+        >
+          무서운 공포연극
+        </button>
+        <button
+          type="button"
+          class="btn btn-warning btn-ibory rounded-pill mb-4 btn-option"
+          data-target="result"
+          data-result="2"
+        >
+          달달한 로맨스연극
+        </button>
+        <button
+          type="button"
+          class="btn btn-warning btn-ibory rounded-pill mb-4 btn-option"
+          data-target="result"
+          data-result="3"
+        >
+          따뜻한 힐링연극
+        </button>
+        <button
+          type="button"
+          class="btn btn-warning btn-ibory rounded-pill mb-4 btn-option"
+          data-target="result"
+          data-result="4"
+        >
+          재밌는 코믹연극
+        </button>
+      </div>
+    </main>
+
+    <div
+      id="results"
+      class="d-flex flex-column justify-content-center align-items-center py-5 text-center mb-5"
+    ></div>
+
+    <footer class="btn-ibory text-white" id="footer">
+      <div class="container text-center">
+        <p class="py-4 mb-0 text-red">
+          Copyright <i class="bi bi-c-circle"></i>2024 Designed by 20220719tue
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // 결과 데이터 배열
+      const resultsData = [
+        {
+          result: 1,
+          name: "가족과 함께 무서운 공포연극",
+          image: "img/horror1.jpg",
+          title: "조각",
+          place: "댕로홀",
+          source: "https://timeticket.co.kr/index.php?number=2820",
+          source_title: "타임티켓",
+          links: [
+            {
+              url: "https://booking.naver.com/booking/12/bizes/61410/items/2213804",
+              title: "네이버예매 바로가기",
+            },
+            {
+              url: "http://ticket.yes24.com/Perf/48414",
+              title: "예스24예매 바로가기",
+            },
+            {
+              url: "https://tickets.interpark.com/goods/22007314",
+              title: "인터파크예매 바로가기",
+            },
+            {
+              url: "https://timeticket.co.kr/index.php?number=2820",
+              title: "타임티켓예매 바로가기",
+            },
+          ],
+        },
+        {
+          result: 2,
+          name: "가족과 함께 달달한 로맨스연극",
+          image: "img/romance1.jpg",
+          title: "뷰티풀 라이프",
+          place: "JTN 아트홀 4관",
+          source: "https://timeticket.co.kr/index.php?number=3471",
+          source_title: "타임티켓",
+          links: [
+            {
+              url: "https://booking.naver.com/booking/12/bizes/162613/items/2800766",
+              title: "네이버예매 바로가기",
+            },
+            {
+              url: "https://tickets.interpark.com/goods/18001569",
+              title: "인터파크예매 바로가기",
+            },
+            {
+              url: "https://timeticket.co.kr/index.php?number=3471",
+              title: "타임티켓예매 바로가기",
+            },
+          ],
+        },
+        {
+          result: 3,
+          name: "가족과 함께 따뜻한 힐링연극",
+          image: "img/healing1.jpg",
+          title: "쇄골에 천사가 잠들고 있다",
+          place: "대학로 자유극장",
+          source:
+            "http://ticket.yes24.com/New/Perf/Detail/Detail.aspx?IdPerf=49371&site_pid=cp511NPlay1",
+          source_title: "예스24",
+          links: [
+            {
+              url: "http://ticket.yes24.com/New/Perf/Detail/Detail.aspx?IdPerf=49371&site_pid=cp511NPlay1",
+              title: "예스24예매 바로가기",
+            },
+          ],
+        },
+        {
+          result: 4,
+          name: "가족과 함께 재밌는 코믹연극",
+          image: "img/comic1.jpg",
+          title: "택시 안에서",
+          place: "해바라기 소극장",
+          source: "https://tickets.interpark.com/goods/19001540?tab=2",
+          source_title: "인터파크",
+          links: [
+            {
+              url: "https://booking.naver.com/booking/12/bizes/140612/items/2725795",
+              title: "네이버예매 바로가기",
+            },
+            {
+              url: "http://ticket.yes24.com/Perf/32378?site_pid=cp511NPlay1",
+              title: "예스24예매 바로가기",
+            },
+            {
+              url: "https://tickets.interpark.com/goods/19001540?tab=2",
+              title: "인터파크예매 바로가기",
+            },
+            {
+              url: "https://www.ticketlink.co.kr/product/26955#tabs-2",
+              title: "티켓링크예매 바로가기",
+            },
+          ],
+        },
+        {
+          result: 5,
+          name: "친구와 함께 무서운 공포연극",
+          image: "img/horror2.jpg",
+          title: "쉬어매드니스",
+          place: "콘텐츠박스",
+          source: "https://timeticket.co.kr/index.php?number=4404",
+          source_title: "타임티켓",
+          links: [
+            {
+              url: "https://booking.naver.com/booking/12/bizes/33623/items/1110615",
+              title: "네이버예매 바로가기",
+            },
+            {
+              url: "https://tickets.interpark.com/goods/19018229",
+              title: "인터파크예매 바로가기",
+            },
+            {
+              url: "https://timeticket.co.kr/index.php?number=4404",
+              title: "타임티켓예매 바로가기",
+            },
+          ],
+        },
+        {
+          result: 6,
+          name: "친구와 함께 달달한 로맨스연극",
+          image: "img/romance2.jpg",
+          title: "옥탑방 고양이",
+          place: "대학로 틴틴홀",
+          source: "https://timeticket.co.kr/index.php?number=1895",
+          source_title: "타임티켓",
+          links: [
+            {
+              url: "https://booking.naver.com/booking/12/bizes/170018/items/2933433",
+              title: "네이버예매 바로가기",
+            },
+            {
+              url: "https://tickets.interpark.com/goods/21013096",
+              title: "인터파크예매 바로가기",
+            },
+            {
+              url: "https://timeticket.co.kr/index.php?number=1895",
+              title: "타임티켓예매 바로가기",
+            },
+          ],
+        },
+        {
+          result: 7,
+          name: "친구와 함께 따뜻한 힐링연극",
+          image: "img/healing2.jpg",
+          title: "사랑과 담배에 관하여",
+          place: "베리컴퍼니",
+          source: "https://tickets.interpark.com/goods/24006386?tab=2",
+          source_title: "인터파크",
+          links: [
+            {
+              url: "https://tickets.interpark.com/goods/24006386?tab=2",
+              title: "인터파크예매 바로가기",
+            },
+          ],
+        },
+        {
+          result: 8,
+          name: "친구와 함께 재밌는 코믹연극",
+          image: "img/comic2.jpg",
+          title: "오백에삼십",
+          place: "대학로 JTN 아트홀 3관",
+          source: "https://timeticket.co.kr/index.php?number=5462",
+          source_title: "타임티켓",
+          links: [
+            {
+              url: "https://booking.naver.com/booking/12/bizes/180778/items/2868275",
+              title: "네이버예매 바로가기",
+            },
+            {
+              url: "https://tickets.interpark.com/goods/24001916",
+              title: "인터파크예매 바로가기",
+            },
+            {
+              url: "https://timeticket.co.kr/index.php?number=5462",
+              title: "타임티켓예매 바로가기",
+            },
+          ],
+        },
+        {
+          result: 9,
+          name: "연인과 함께 무서운 공포연극",
+          image: "img/horror3.jpg",
+          title: "오마이갓",
+          place: "오마이갓 전용관",
+          source: "https://timeticket.co.kr/index.php?number=3121",
+          source_title: "타임티켓",
+          links: [
+            {
+              url: "https://booking.naver.com/booking/12/bizes/90583/items/4473599",
+              title: "네이버예매 바로가기",
+            },
+            {
+              url: "http://ticket.yes24.com/Perf/46649",
+              title: "예스24예매 바로가기",
+            },
+            {
+              url: "https://tickets.interpark.com/goods/23004562",
+              title: "인터파크예매 바로가기",
+            },
+            {
+              url: "https://timeticket.co.kr/index.php?number=3121",
+              title: "타임티켓예매 바로가기",
+            },
+          ],
+        },
+        {
+          result: 10,
+          name: "연인과 함께 달달한 로맨스연극",
+          image: "img/romance3.jpg",
+          title: "나의 PS 파트너",
+          place: "대학로 마루아트홀",
+          source: "https://timeticket.co.kr/index.php?number=3476",
+          source_title: "타임티켓",
+          links: [
+            {
+              url: "http://ticket.yes24.com/Perf/48465",
+              title: "예스24예매 바로가기",
+            },
+            {
+              url: "https://tickets.interpark.com/goods/24001114",
+              title: "인터파크예매 바로가기",
+            },
+            {
+              url: "https://timeticket.co.kr/index.php?number=3476",
+              title: "타임티켓예매 바로가기",
+            },
+          ],
+        },
+        {
+          result: 11,
+          name: "연인과 함께 따뜻한 힐링연극",
+          image: "img/healing3.jpg",
+          title: "올모스트, 메인",
+          place: "대학로 열린극장",
+          source: "https://tickets.interpark.com/goods/24006499?tab=2",
+          source_title: "인터파크",
+          links: [
+            {
+              url: "https://tickets.interpark.com/goods/24006499?tab=2",
+              title: "인터파크예매 바로가기",
+            },
+          ],
+        },
+        {
+          result: 12,
+          name: "연인과 함께 재밌는 코믹연극",
+          image: "img/comic3.jpg",
+          title: "늘근도둑이야기",
+          place: "대학로 아트포레스트 1관",
+          source: "https://timeticket.co.kr/index.php?number=4721",
+          source_title: "타임티켓",
+          links: [
+            {
+              url: "https://booking.naver.com/booking/12/bizes/140273/items/2724667",
+              title: "네이버예매 바로가기",
+            },
+            {
+              url: "https://tickets.interpark.com/goods/22001159",
+              title: "인터파크예매 바로가기",
+            },
+            {
+              url: "https://timeticket.co.kr/index.php?number=4721",
+              title: "타임티켓예매 바로가기",
+            },
+          ],
+        },
+        {
+          result: 13,
+          name: "혼자보는 무서운 공포연극",
+          image: "img/horror4.jpg",
+          title: "스위치",
+          place: "아르가르드 씨어터",
+          source: "https://timeticket.co.kr/index.php?number=3156",
+          source_title: "타임티켓",
+          links: [
+            {
+              url: "https://booking.naver.com/booking/12/bizes/97668/items/2606567",
+              title: "네이버예매 바로가기",
+            },
+            {
+              url: "https://tickets.interpark.com/goods/22001006",
+              title: "인터파크예매 바로가기",
+            },
+            {
+              url: "https://timeticket.co.kr/index.php?number=3156",
+              title: "타임티켓예매 바로가기",
+            },
+          ],
+        },
+        {
+          result: 14,
+          name: "혼자보는 달달한 로맨스연극",
+          image: "img/romance4.jpg",
+          title: "남사친 여사친",
+          place: "세우아트센터 2관",
+          source: "https://tickets.interpark.com/goods/24007080",
+          source_title: "예스24",
+          links: [
+            {
+              url: "http://ticket.yes24.com/Perf/49780",
+              title: "예스24예매 바로가기",
+            },
+            {
+              url: "https://tickets.interpark.com/goods/24007080",
+              title: "인터파크예매 바로가기",
+            },
+          ],
+        },
+        {
+          result: 15,
+          name: "혼자보는 따뜻한 힐링연극",
+          image: "img/comic1.jpg",
+          title: "노인과 바다",
+          place: "대학로 스튜디오블루",
+          source: "https://tickets.interpark.com/goods/24005531?tab=2",
+          source_title: "인터파크",
+          links: [
+            {
+              url: "https://tickets.interpark.com/goods/24005531?tab=2",
+              title: "인터파크예매 바로가기",
+            },
+          ],
+        },
+        {
+          result: 16,
+          name: "혼자보는 재밌는 코믹연극",
+          image: "img/comic4.jpg",
+          title: "연극행오버",
+          place: "정극장",
+          source: "https://timeticket.co.kr/index.php?number=4712",
+          source_title: "타임티켓",
+          links: [
+            {
+              url: "https://booking.naver.com/booking/12/bizes/900890",
+              title: "네이버예매 바로가기",
+            },
+            {
+              url: "http://ticket.yes24.com/Perf/41222?site_pid=cp511NPlay1",
+              title: "예스24예매 바로가기",
+            },
+            {
+              url: "https://tickets.interpark.com/goods/23005704",
+              title: "인터파크예매 바로가기",
+            },
+            {
+              url: "https://timeticket.co.kr/index.php?number=4712",
+              title: "타임티켓예매 바로가기",
+            },
+            {
+              url: "https://www.ticketlink.co.kr/product/44014#tabs-2",
+              title: "티켓링크예매 바로가기",
+            },
+          ],
+        },
+      ];
+
+      let btn = 0;
+
+      // 결과 버튼 클릭 이벤트 핸들러
+      document.querySelectorAll(".btn-option").forEach((button) => {
+        button.addEventListener("click", function () {
+          const target = this.getAttribute("data-target");
+
+          // 첫 번째 질문
+          if (target === "Q2") {
+            document.getElementById("questionnaire").classList.add("d-none");
+            document.getElementById(target).classList.remove("d-none");
+            btn = this.getAttribute("data-result");
+          }
+          // 두 번째 질문
+          else if (target === "result") {
+            document.getElementById("Q2").classList.add("d-none");
+            const now = this.getAttribute("data-result");
+
+            if (btn === "1") {
+              if (now === "1") showResult(0);
+              else if (now === "2") showResult(1);
+              else if (now === "3") showResult(2);
+              else if (now === "4") showResult(3);
+            } else if (btn === "2") {
+              if (now === "1") showResult(4);
+              else if (now === "2") showResult(5);
+              else if (now === "3") showResult(6);
+              else if (now === "4") showResult(7);
+            } else if (btn === "3") {
+              if (now === "1") showResult(8);
+              else if (now === "2") showResult(9);
+              else if (now === "3") showResult(10);
+              else if (now === "4") showResult(11);
+            } else if (btn === "4") {
+              if (now === "1") showResult(12);
+              else if (now === "2") showResult(13);
+              else if (now === "3") showResult(14);
+              else if (now === "4") showResult(15);
+            }
+            // 다른 조건들 추가
+          }
+        });
+      });
+
+      function showResult(resultIndex) {
+        const result = resultsData.find(
+          (item) => item.result === resultIndex + 1
+        );
+        if (result) {
+          const resultContent = `
+      <div class="row py-5 w-50 w-md-100 mt-lg-5">
+        <div class="row d-flex justify-content-center align-items-center">
+          <h3 class="fw-bold col-lg-12 col-md-12 mb-5 text-center" style="font-size: 1.5rem">
+          ${result.name}
+        </h3>
+          <div class="col-lg-6 col-md-12 d-flex justify-content-center align-items-center">
+            <div class="text-center">
+              <img src="${result.image}" class="img-fluid" alt="${
+            result.name
+          }" />
+              <p class="mb-3">
+                <a href="${
+                  result.source
+                }" target="_blank" class="text_copyright text-decoration-none">
+                  ⓒ이미지출처: ${result.source_title}
+                </a>
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-12 d-flex flex-column justify-content-center align-items-center text-center">
+            <h5 class="fw-bold mt-3">${result.title}</h5>
+            <h6 class="mb-3">장소: ${result.place}</h6>
+            <h6 class="fw-bold mb-4 mt-3">예매 사이트</h6>
+            <ul class="list-unstyled mb-3">
+              ${result.links
+                .map(
+                  (link) =>
+                    `<li><button type="button" class="btn btn-warning mb-3 rounded-pill btn-ibory">
+                      <a href="${link.url}" class="${link.class} text-decoration-none text-dark text-red" target="_blank">
+                        ${link.title}
+                      </a>
+                    </button></li>`
+                )
+                .join("")}
+            </ul>
+            <button type="button" class="btn btn-success reset-btn btn-red">
+              <a href="recommend.html" class="text-white text-decoration-none text-ibory">다시하기</a>
+            </button>
+          </div>
+        </div>
+      </div>
+    `;
+          document.getElementById("results").innerHTML = resultContent;
+          document.getElementById("results").classList.remove("d-none");
+        }
+      }
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

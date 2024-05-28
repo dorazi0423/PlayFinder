@@ -66,3 +66,25 @@ h4 {
 .btn-outline-light {
   border: none;
 }
+.text-white-dark {
+  color: white;
+}
+.text-white-dark:hover,
+.text-white-dark:active {
+  color: black;
+}
+
+/* 푸터 */
+footer {
+  /* 그라데이션 넣기 */
+  background-image: linear-gradient(
+    to bottom,
+    rgba(168, 91, 91, 1),
+    rgba(153, 83, 83, 1),
+    rgba(141, 76, 76, 1),
+    rgba(20, 17, 17, 0.9)
+  );
+  background-size: cover;
+  background-position: center top;
+  background-attachment: fixed;
+}

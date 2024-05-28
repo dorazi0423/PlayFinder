@@ -1,0 +1,131 @@
+body {
+  /* 그라데이션 넣기 */
+  background-color: rgb(216, 201, 175);
+  background-size: cover;
+  background-position: center top;
+  background-attachment: fixed;
+}
+
+.gugi-regular {
+  font-family: "Gugi", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  font-family: "Gugi", sans-serif;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Gugi", sans-serif;
+}
+
+/* 네비게이션 바 */
+.navbar {
+  border-bottom: 1px solid #000000; /* 원하는 색상과 두께로 변경 */
+}
+.navbar-nav .nav-item:last-child {
+  margin-right: 0;
+}
+.navbar-toggler {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+.navbar-toggler:focus,
+.navbar-toggler:active {
+  outline: none;
+  border: 1px solid rgb(0, 0, 0);
+  box-shadow: none;
+}
+.now {
+  color: rgb(159, 56, 56) !important;
+}
+.nav-link:hover,
+.nav-link:active {
+  color: rgb(159, 56, 56) !important;
+}
+.btn-red {
+  background-color: rgb(159, 56, 56) !important;
+  border: none;
+}
+.btn-ibory {
+  background-color: rgb(240, 235, 221) !important;
+  border: none;
+}
+.text-red {
+  color: rgb(159, 56, 56) !important;
+}
+.text-ibory {
+  color: rgb(240, 235, 221) !important;
+}
+
+/* 메인 */
+main {
+  cursor: pointer;
+}
+.container {
+  margin-top: 100px; /* 네비게이션바 아래로 내리기 위해 */
+  padding-left: 15px; /* 좌측 패딩 조정 */
+  padding-right: 15px; /* 우측 패딩 조정 */
+}
+
+.square {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border: 1px solid black;
+}
+
+.up {
+  margin-top: -20%;
+}
+
+@media (max-width: 990px) {
+  .up {
+    margin-top: 0%;
+  }
+}
+
+.overlay {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.overlay img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: opacity 0.3s ease;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.overlay:hover img {
+  opacity: 0.5; /* 이미지 어둡게 처리 */
+}
+
+.overlay:hover .overlay-text {
+  opacity: 1; /* 텍스트 보이게 처리 */
+}
+
+a {
+  text-decoration: none;
+  color: gray;
+}

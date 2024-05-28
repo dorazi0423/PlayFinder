@@ -1,0 +1,93 @@
+body {
+  /* 그라데이션 넣기 */
+  background-color: rgb(216, 201, 175);
+  background-size: cover;
+  background-position: center top;
+  background-attachment: fixed;
+}
+
+.gugi-regular {
+  font-family: "Gugi", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  font-family: "Gugi", sans-serif;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Gugi", sans-serif;
+}
+
+/* 네비게이션 바 */
+.navbar {
+  border-bottom: 1px solid #000000; /* 원하는 색상과 두께로 변경 */
+}
+.navbar-nav .nav-item:last-child {
+  margin-right: 0;
+}
+.navbar-toggler {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+.navbar-toggler:focus,
+.navbar-toggler:active {
+  outline: none;
+  border: 1px solid rgb(0, 0, 0);
+  box-shadow: none;
+}
+.now {
+  color: rgb(159, 56, 56) !important;
+}
+.nav-link:hover,
+.nav-link:active {
+  color: rgb(159, 56, 56) !important;
+}
+.bg-ibory {
+  background-color: rgb(240, 235, 221) !important;
+}
+
+/* 메인 */
+.btn-warning {
+  width: 200px;
+}
+.btn-warning:hover {
+  filter: brightness(70%);
+}
+.result_div {
+  background-color: rgb(216, 201, 175);
+  border-radius: 25px;
+}
+
+.text_copyright {
+  color: rgb(177, 166, 143);
+}
+
+.btn-red {
+  background-color: rgb(159, 56, 56) !important;
+  border: none;
+}
+.btn-ibory {
+  background-color: rgb(240, 235, 221) !important;
+  border: none;
+}
+.text-red {
+  color: rgb(159, 56, 56) !important;
+}
+.text-ibory {
+  color: rgb(240, 235, 221) !important;
+}
+
+#questionnaire {
+  margin-top: 10% !important;
+}
+#Q2 {
+  margin-top: 10% !important;
+}
+#results {
+  margin-bottom: 10% !important;
+}
