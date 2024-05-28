@@ -1,0 +1,68 @@
+header {
+  /* 그라데이션 넣기 */
+  background-image: linear-gradient(
+    to bottom,
+    rgba(168, 91, 91, 1),
+    rgba(153, 83, 83, 1),
+    rgba(141, 76, 76, 1),
+    rgba(20, 17, 17, 0.9)
+  );
+  background-size: cover;
+  background-position: center top;
+  background-attachment: fixed;
+}
+
+.gugi-regular {
+  font-family: "Gugi", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  font-family: "Gugi", sans-serif;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Gugi", sans-serif;
+}
+
+/* 네비게이션 바 */
+.navbar {
+  border-bottom: 1px solid #fff; /* 원하는 색상과 두께로 변경 */
+}
+.navbar-nav .nav-item:last-child {
+  margin-right: 0;
+}
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' linecap='round' linejoin='round' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+.navbar-toggler {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+.navbar-toggler:focus,
+.navbar-toggler:active {
+  outline: none;
+  border: 1px solid white;
+  box-shadow: none;
+}
+.now {
+  color: rgb(159, 56, 56) !important;
+}
+.nav-link:hover,
+.nav-link:active {
+  color: rgb(180, 167, 167) !important;
+}
+
+/* 헤더 */
+.my_btn {
+  border: 0.1px solid #fff;
+
+  height: 15%;
+}
+.btn-outline-light {
+  border: none;
+}
