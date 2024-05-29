@@ -449,6 +449,26 @@
               },
             ],
           },
+          {
+            title: "크리미널 시즌5",
+            place: "봄날아트홀 2관",
+            source: "https://timeticket.co.kr/index.php?number=5140",
+            source_title: "타임티켓",
+            links: [
+              {
+                url: "https://booking.naver.com/booking/12/bizes/923208/items/5155438",
+                title: "네이버예매 바로가기",
+              },
+              {
+                url: "https://tickets.interpark.com/goods/23007900?tab=2",
+                title: "인터파크예매 바로가기",
+              },
+              {
+                url: "https://timeticket.co.kr/index.php?number=5140",
+                title: "타임티켓예매 바로가기",
+              },
+            ],
+          },
         ],
         comic: [
           {
@@ -633,7 +653,7 @@
                   const linkElement = document.createElement("p");
                   linkElement.className = "text-center";
                   linkElement.innerHTML = `
-                  <button type="button" class="btn btn-warning btn-red rounded-pill w-100 "><a href="${link.url}" target="_blank" class="text-red text-decoration-none">${link.title}</a></button>`;
+                  <a href="${link.url}" target="_blank" class="text-red text-decoration-none btn btn-warning btn-red rounded-pill w-100">${link.title}</a>`;
                   modalLinks.appendChild(linkElement);
                 });
               });

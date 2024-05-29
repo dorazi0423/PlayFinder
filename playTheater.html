@@ -229,19 +229,20 @@
           }
 
           theaterCard.innerHTML = `
-      <div class="square bg-dark">
-        <div class="overlay">
-          <img
-            src="${theater.image}"
-            alt="${theater.name}"
-            class="w-100"
-            data-bs-toggle="modal"
-            data-bs-target="#theaterModal"
-            data-theater-index="${index}"
-          />
-          <div class="overlay-text">${theater.name}</div>
-        </div>
-      </div>
+          <div class="square bg-dark">
+  <div class="overlay" data-bs-toggle="modal" data-bs-target="#theaterModal" data-theater-index="${index}">
+    <img
+      src="${theater.image}"
+      alt="${theater.name}"
+      class="w-100"
+      data-theater-index="${index}"
+    />
+    <div class="overlay-text-wrapper">
+      <div class="overlay-text">${theater.name}</div>
+    </div>
+  </div>
+</div>
+
       <p class="text-center">
         <a href="${theater.copyright}" target="_blank">ⓒ이미지출처: ${theater.copyright_title}</a>
       </p>
@@ -267,6 +268,26 @@
         }" class="btn btn-warning w-25 text-ibory btn-red" target="_blank">더 알아보기</a>
       </div>
     `;
+        });
+      });
+
+      document.querySelectorAll(".overlay").forEach((overlay) => {
+        overlay.addEventListener("click", function (event) {
+          // 텍스트를 클릭한 경우, 해당 텍스트의 data-bs-target 속성으로 모달을 엽니다.
+          if (event.target.classList.contains("overlay-text")) {
+            const modalTarget = event.target.getAttribute("data-bs-target");
+            const modal = document.querySelector(modalTarget);
+            const modalInstance = new bootstrap.Modal(modal);
+            modalInstance.show();
+          }
+          // 이미지 클릭 시에도 동일하게 모달을 엽니다.
+          if (event.target.tagName === "IMG") {
+            const img = event.target;
+            const modalTarget = img.getAttribute("data-bs-target");
+            const modal = document.querySelector(modalTarget);
+            const modalInstance = new bootstrap.Modal(modal);
+            modalInstance.show();
+          }
         });
       });
     </script>
