@@ -602,11 +602,11 @@
               ${result.links
                 .map(
                   (link) =>
-                    `<li><button type="button" class="btn btn-warning mb-3 rounded-pill btn-ibory">
-                      <a href="${link.url}" class="${link.class} text-decoration-none text-dark text-red" target="_blank">
+                    `<li>
+                      <a href="${link.url}" class="${link.class} text-decoration-none text-dark text-red btn btn-warning mb-3 rounded-pill btn-ibory" target="_blank">
                         ${link.title}
                       </a>
-                    </button></li>`
+              </li>`
                 )
                 .join("")}
             </ul>
