@@ -602,17 +602,16 @@
               ${result.links
                 .map(
                   (link) =>
-                    `<li>
+                    `
                       <a href="${link.url}" class="${link.class} text-decoration-none text-dark text-red btn btn-warning mb-3 rounded-pill btn-ibory" target="_blank">
                         ${link.title}
                       </a>
-              </li>`
+         `
                 )
                 .join("")}
             </ul>
-            <button type="button" class="btn btn-success reset-btn btn-red">
-              <a href="recommend.html" class="text-white text-decoration-none text-ibory">다시하기</a>
-            </button>
+              <a href="recommend.html" class="text-white text-decoration-none text-ibory btn btn-success reset-btn btn-red">다시하기</a>
+
           </div>
         </div>
       </div>
