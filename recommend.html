@@ -23,8 +23,7 @@
       rel="stylesheet"
     />
   </head>
-  <body data-bs-spy="scroll">
-    <!-- 네비게이션바 -->
+  <body>
     <!-- 네비게이션바 -->
     <nav class="navbar navbar-expand-md bg-body-tertiary fixed-top">
       <div class="container-fluid">
@@ -69,7 +68,7 @@
 
     <!-- 메인 컨텐츠 -->
     <main
-      class="text-white d-flex flex-column justify-content-center align-items-center overflow-css py-5 mt-5 mb-5"
+      class="vh-100 text-white d-flex flex-column justify-content-center align-items-center overflow-css bg-info"
       id="questionnaire"
     >
       <div
@@ -102,7 +101,7 @@
         </button>
         <button
           type="button"
-          class="btn btn-warning btn-ibory text-red rounded-pill mb-4 btn-option"
+          class="btn btn-warning btn-ibory text-red rounded-pill btn-option"
           data-target="Q2"
           data-result="4"
         >
@@ -112,12 +111,10 @@
     </main>
 
     <main
-      class="d-flex flex-column justify-content-center align-items-center overflow-css py-5 mt-5 mb-5 d-none"
+      class="vh-100 d-flex flex-column justify-content-center align-items-center overflow-css d-none"
       id="Q2"
     >
-      <div
-        class="d-flex flex-column justify-content-center align-items-center py-5 mt-5"
-      >
+      <div class="d-flex flex-column justify-content-center align-items-center">
         <h2 class="fw-bold mb-5">보고 싶은 장르는?</h2>
         <button
           type="button"
@@ -156,7 +153,7 @@
 
     <div
       id="results"
-      class="d-flex flex-column justify-content-center align-items-center py-5 text-center mb-5"
+      class="d-flex flex-column justify-content-center align-items-center py-5 text-center mb-5 d-none"
     ></div>
 
     <footer class="btn-ibory text-white" id="footer">
@@ -480,7 +477,7 @@
         {
           result: 15,
           name: "혼자보는 따뜻한 힐링연극",
-          image: "img/comic1.jpg",
+          image: "img/healing4.jpg",
           title: "노인과 바다",
           place: "대학로 스튜디오블루",
           source: "https://tickets.interpark.com/goods/24005531?tab=2",
