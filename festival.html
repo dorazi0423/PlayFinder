@@ -72,7 +72,7 @@
       class="container-fulid overflow-hidden mt-5 pt-5 main"
     >
       <div
-        class="row text-center d-flex justify-content-center align-items-center"
+        class="row text-center d-flex justify-content-center align-items-center py-5"
       >
         <div
           id="column1"
@@ -204,49 +204,65 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        const columns = document.querySelectorAll(".column");
+        function initializeColumns() {
+          const columns = document.querySelectorAll(".column");
 
-        columns.forEach((column) => {
-          column.addEventListener("click", function () {
-            resetColumns();
-            column.classList.add("col-md-6");
-            columns.forEach((col) => {
-              if (col !== column) {
-                col.classList.add("col-md-2");
+          columns.forEach((column) => {
+            column.addEventListener("click", function () {
+              resetColumns();
+              column.classList.add("col-md-6");
+              columns.forEach((col) => {
+                if (col !== column) {
+                  col.classList.add("col-md-2");
+                }
+              });
+
+              const columnContent = column.querySelector(".column_content");
+              if (columnContent) {
+                columnContent.classList.remove("d-none");
+              }
+
+              const column_img = column.querySelector(".column_img");
+              if (column_img) {
+                column_img.classList.remove("d-none");
               }
             });
-
-            // 선택한 column의 content 요소를 표시
-            const columnContent = column.querySelector(".column_content");
-            if (columnContent) {
-              columnContent.classList.remove("d-none");
-            }
-
-            const column_img = column.querySelector(".column_img");
-            if (column_img) {
-              column_img.classList.remove("d-none");
-            }
           });
-        });
 
-        function resetColumns() {
-          columns.forEach((column) => {
-            column.classList.remove("col-md-6");
-            column.classList.remove("col-md-2");
+          function resetColumns() {
+            columns.forEach((column) => {
+              column.classList.remove("col-md-6");
+              column.classList.remove("col-md-2");
 
-            const columnContent = column.querySelector(".column_content");
-            if (columnContent) {
-              columnContent.classList.add("d-none");
-            }
+              const columnContent = column.querySelector(".column_content");
+              if (columnContent) {
+                columnContent.classList.add("d-none");
+              }
 
-            const column_img = column.querySelector(".column_img");
-            if (column_img) {
-              column_img.classList.add("d-none");
-            }
-          });
+              const column_img = column.querySelector(".column_img");
+              if (column_img) {
+                column_img.classList.add("d-none");
+              }
+            });
+          }
         }
+
+        function checkViewportWidth() {
+          const viewportWidth =
+            window.innerWidth || document.documentElement.clientWidth;
+          if (viewportWidth > 500) {
+            initializeColumns();
+          }
+        }
+
+        checkViewportWidth();
+
+        window.addEventListener("resize", function () {
+          checkViewportWidth();
+        });
       });
     </script>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
