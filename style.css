@@ -56,6 +56,9 @@ h4 {
 .nav-link:active {
   color: rgb(180, 167, 167) !important;
 }
+.navbar {
+  background-color: rgba(168, 91, 91, 1);
+}
 
 /* 헤더 */
 .my_btn {
